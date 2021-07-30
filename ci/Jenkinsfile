@@ -2,7 +2,10 @@ pipeline {
     agent any
 
  	stages {
-		 stage('unit test') {
+		stage('init') {
+            checkout scm
+        }
+		stage('unit test') {
             steps {
                 nodejs(nodeJSInstallationName: 'default') {
 					sh 'npm install --only=dev'
