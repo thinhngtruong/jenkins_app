@@ -1,5 +1,7 @@
 pipeline {
-    stages {
+    agent any
+
+ 	stages {
 		 stage('unit test') {
             steps {
                 nodejs(nodeJSInstallationName: 'default') {
