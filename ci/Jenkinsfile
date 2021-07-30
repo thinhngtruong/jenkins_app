@@ -1,8 +1,14 @@
 pipeline {
-    agent any
-
     stages {
-        stage('Build') {
+		 stage('unit test') {
+            steps {
+                nodejs(nodeJSInstallationName: 'default') {
+					sh 'npm install --only=dev'
+					sh 'npm test '
+				}
+            }
+        }
+        stage('build') {
             steps {
                 nodejs(nodeJSInstallationName: 'default') {
 					sh 'npm install'
