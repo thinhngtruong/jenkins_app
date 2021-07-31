@@ -22,7 +22,8 @@ node {
 
         emailext body: content,
             subject: subject,
-            to: to
+            to: to,
+            mimetype: 'text/html'
     }
 
 }
